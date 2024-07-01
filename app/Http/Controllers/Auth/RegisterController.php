@@ -15,12 +15,12 @@ class RegisterController extends Controller
         // dd($request);
         //lerr datos enviados en el formulario
         // dd($request->get('name'));
-
         //validar los datos
         $this->validate($request,[
             'name' =>'required|string|min:5',
-            'email' =>'required|string|email|max:255|unique:users',
-            'password' =>'required|string|min:8|confirmed',
+            'username' =>'required|unique:users|min:3|max:50',
+            'email' =>'required|email|max:60|unique:users',
+            'password' =>'required',
         ]);
     }
 }

@@ -24,17 +24,37 @@
                 </div>
                 <div class="mb-5">
                     <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Tu Nombre de usuario" class="border p-3 w-full rounded-lg">
+                    <input type="text" id="username" name="username" placeholder="Tu Nombre de usuario" class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
+                    value="{{old('name')}}"/>
+
+                    
+                    @error('username')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                    @enderror
                 </div>
 
                 <div class="mb-5">
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
-                    <input type="emai" id="email" name="email" placeholder="Tu email" class="border p-3 w-full rounded-lg">
+                    <input type="email" id="email" name="email" placeholder="Tu email" class="border p-3 w-full rounded-lg
+                    @error('email') border-red-500 @enderror"
+                    value="{{old('name')}}"/>
+
+                    
+                    @error('email')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                    @enderror
                 </div>
 
                 <div class="mb-5">
                     <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Contraseña</label>
-                    <input type="password" id="password" name="password" class="border p-3 w-full rounded-lg">
+                    <input type="password" id="password" name="password" class="border p-3 w-full rounded-lg
+                    @error('password') border-red-500 @enderror"
+                    value="{{old('name')}}"/>
+
+                    
+                    @error('password')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                    @enderror
                 </div>
 
                 <div class="mb-5">
