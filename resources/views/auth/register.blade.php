@@ -25,7 +25,7 @@
                 <div class="mb-5">
                     <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
                     <input type="text" id="username" name="username" placeholder="Tu Nombre de usuario" class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
-                    value="{{old('name')}}"/>
+                    value="{{old('username')}}"/>
 
                     
                     @error('username')
@@ -37,7 +37,7 @@
                     <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
                     <input type="email" id="email" name="email" placeholder="Tu email" class="border p-3 w-full rounded-lg
                     @error('email') border-red-500 @enderror"
-                    value="{{old('name')}}"/>
+                    value="{{old('email')}}"/>
 
                     
                     @error('email')
@@ -49,7 +49,6 @@
                     <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Contraseña</label>
                     <input type="password" id="password" name="password" class="border p-3 w-full rounded-lg
                     @error('password') border-red-500 @enderror"
-                    value="{{old('name')}}"/>
 
                     
                     @error('password')
