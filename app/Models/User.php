@@ -44,4 +44,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //aqui se crea la relacion con la tabla de posts
+    public function posts(){
+        return $this->hasMany(Post::class); //RELACION 1 A MUCHOS
+    }
 }

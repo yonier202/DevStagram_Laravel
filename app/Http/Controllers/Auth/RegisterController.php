@@ -19,7 +19,7 @@ class RegisterController extends Controller
 
         //modificar el request
         $request->request->add([
-            'username' => Str::slug($request->username)
+            'username' => Str::slug($request->username) //covertir en formato url(jhonier-rojas)
         ]);
         // dd($request);
         //lerr datos enviados en el formulario
@@ -49,7 +49,7 @@ class RegisterController extends Controller
         ]);
 
         //otra forma de autenticar
-        auth()->attempt($request->only('email', 'password'));
+        // auth()->attempt($request->only('email', 'password'));
 
         //redireccionar al usuario a la ruta con name ('post.index')
         return redirect()->route('post.index'); //redireccionar a muro
