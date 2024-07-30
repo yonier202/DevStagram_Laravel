@@ -19,7 +19,7 @@ class PostController extends Controller
         //mostrar los posts del usuario autenticado
         // dd(auth()->user()->posts);
 
-        $posts = Post::where('user_id', $user->id)->paginate(2); //traer los posts del usuario autenticado
+        $posts = Post::where('user_id', $user->id)->latest()->paginate(2); //traer los posts del usuario autenticado
         return view('dashboard', compact('user', 'posts'));
     }
     //metodo para mostrar el formulario de crear un post
