@@ -52,6 +52,6 @@ class RegisterController extends Controller
         // auth()->attempt($request->only('email', 'password'));
 
         //redireccionar al usuario a la ruta con name ('post.index')
-        return redirect()->route('post.index'); //redireccionar a muro
+        return redirect()->route('post.index', $request->username); //redireccionar a muro
     }
 }

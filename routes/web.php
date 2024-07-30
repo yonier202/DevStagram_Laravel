@@ -1,12 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\PerfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +43,19 @@ Route::get('/{user:username}/post/{post}', [PostController::class, 'show'])->nam
 Route::post('/{user:username}/post/{post}', [ComentarioController::class, 'store'])->name('comentarios.store');
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');
+
+//like a las fotos
+Route::post('/post/{post}/likes', [LikeController::class, 'store'])->name('post.likes.store');
+Route::delete('/post/{post}/likes', [LikeController::class, 'destroy'])->name('post.likes.destroy');
+
+//Rutas para el perfil
+Route::get('/{user:username}/editar-perfil', [PerfilController::class, 'index'])->name('perfil.index');
+Route::post('/{user:username}/editar-perfil', [PerfilController::class, 'store'])->name('perfil.store');
+
+
+//Rutas siguiendo usuario
+Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow');
+Route::delete('/{user:username}/unfollow', [FollowerController::class, 'destroy'])->name('users.unfollow');
+
+
 
